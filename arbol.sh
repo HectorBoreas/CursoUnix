@@ -1,8 +1,7 @@
 #!/bin/bash
-sudo -n apt-get install tree -y
-echo "Admin1234"
+sudo apt-get install tree -y
+terminal -e "Admin1234"
 echo "Instalación correcta, pulsa Enter para eliminar"
 read
-
-#sudo apt-get remove tree -y
+sudo apt-get remove tree -y
 
