@@ -1,3 +1,3 @@
-			ls /home/hector >> $ruta/$2/$2.txt
-				grep hector /home/hector/CursoUnix/apartado1.sh >> $ruta/$2/$2.txt
-                                	tail /home/hector/CursoUnix/arbol.sh >> $ruta/$2/$2.txt
+			ls /home/hector > $ruta/$2/$2.txt 
+				grep hector /home/hector/CursoUnix/apartado1.sh > $ruta/$2/$2.txt
+                                	tail /home/hector/CursoUnix/arbol.sh > $ruta/$2/$2.txt
