@@ -19,21 +19,21 @@ for subdir in $@; do
 #		opcion=$
 	case "$#" in
 	        1 ) 
-#	        	mkdir -v ./UbuntuPractica/$subdir
-	        	pwd /home/hector > $ruta/$2/$2.txt
-	        	shift
+	        	mkdir -p ./UbuntuPractica/$subdir
+	        	pwd > $ruta/$2/$2.txt
+#	        	shift
 	        	break
 	        ;; 
 	        2 ) 
-#	        	mkdir -v ./UbuntuPractica/$subdir
+	        	mkdir -p ./UbuntuPractica/$subdir
 	        	grep hector /home/hector/CursoUnix/apartado1.sh > $ruta/$2/$2.txt
-	        	shift
+#	        	shift
 	        	break
 	        ;; 
 	        3 ) 
-#	        	mkdir -v ./UbuntuPractica/$subdir
+	        	mkdir -p ./UbuntuPractica/$subdir
 	        	tail /home/hector/CursoUnix/arbol.sh > $ruta/$2/$2.txt
-	        	shift
+#	        	shift
 	        	break
 	        ;; 
 	        *) shift; break ;;

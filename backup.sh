@@ -4,8 +4,6 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 backup=/home/hector/Documents/Backup/
-fecha=$( date '+%D%R' )
-nombre=$1$fecha
 if [ ! -d $backup ]; then
 	mkdir $backup
 fi
