@@ -8,9 +8,42 @@ shift
 
 for subdir in $@; do
 	if [ -d ./UbuntuPractica/$subdir ]; then
-	echo "El directorio $subdir ya existe"
-	else
-		mkdir -v ./UbuntuPractica/$subdir
-		ls UbuntuPractica > ./UbuntuPractica/$subdir/$subdir.txt
+		echo "El directorio $subdir ya existe"
+	else 
+#		echo $1
+#		shift
+		
+	while [[ $# > 0 ]]
+	do
+	mkdir -v ./UbuntuPractica/$subdir
+#		opcion=$
+	case "$#" in
+	        1 ) 
+#	        	mkdir -v ./UbuntuPractica/$subdir
+	        	pwd /home/hector > $ruta/$2/$2.txt
+	        	shift
+	        	break
+	        ;; 
+	        2 ) 
+#	        	mkdir -v ./UbuntuPractica/$subdir
+	        	grep hector /home/hector/CursoUnix/apartado1.sh > $ruta/$2/$2.txt
+	        	shift
+	        	break
+	        ;; 
+	        3 ) 
+#	        	mkdir -v ./UbuntuPractica/$subdir
+	        	tail /home/hector/CursoUnix/arbol.sh > $ruta/$2/$2.txt
+	        	shift
+	        	break
+	        ;; 
+	        *) shift; break ;;
+	       
+	esac
+	done
+		
+#			ls UbuntuPractica > ./UbuntuPractica/$subdir/$subdir.txt
+		
+#			pwd UbuntuPractica > ./UbuntuPractica/$subdir/$subdir.txt
+			
 	fi
 done
