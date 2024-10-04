@@ -13,5 +13,10 @@ fi
 mkdir -p ../Escritorio/Ejercicio2
 
 for backup in $@; do
-	cp $backup ../Escritorio/Ejercicio2
+	# Añado una condicion para que no modifique una copia ya hecha
+	if [ -f ../Escritorio/Ejercicio2/$backup ]; then
+		echo "el fichero ya ha sido copiado"
+	else
+		cp $backup ../Escritorio/Ejercicio2
+	fi
 done
