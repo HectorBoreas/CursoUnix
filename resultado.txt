@@ -1,0 +1,10 @@
+El doble de 1 es 2
+El doble de 2 es 4
+El doble de 3 es 6
+El doble de 4 es 8
+El doble de 5 es 10
+El doble de 6 es 12
+El doble de 7 es 14
+El doble de 8 es 16
+El doble de 9 es 18
+El doble de 10 es 20
