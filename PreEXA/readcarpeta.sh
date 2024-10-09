@@ -1,6 +1,6 @@
 #/bin/bash
 #Comprobación de parametros correctos
-if [ $# -ge 1 ]; then
+if [ $# -ne 0 ]; then
 	echo "Uso: $0 <Debe esperar a que se solicite los datos>"
 	exit 1
 fi

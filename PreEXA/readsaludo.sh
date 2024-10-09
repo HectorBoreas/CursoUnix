@@ -1,6 +1,6 @@
 #/bin/bash
 #Comprobación de entrada correcta
-if [ $# -ge 1 ]; then
+if [ $# -ne 0 ]; then
 	echo "Uso: $0 <Sin parametros hasta pregunta>"
 	exit 1
 fi

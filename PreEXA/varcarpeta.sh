@@ -1,12 +1,12 @@
 #/bin/bash
 #Comprobación de parametros correctos
-if [ $# -ge 1 ]; then
-	echo "Uso: $0 <ruta> <nombre nuevo directorio>"
+if [ $# -ne 0 ]; then
+	echo "Uso: $0 <sin parametros>"
 	exit 1
 fi
 
 #Definimos las variables
-ruta=./PracticaExa/Nueva
+ruta=./PracticaEXA/Nueva
 name=VarDir
 
 #Creamos el directorio
