@@ -16,13 +16,29 @@ if [ ! -f "$archivo" ]; then
 fi
 
 # Creación de usuario del archivo línea por línea
-#while IFS= read -r linea; do
-	sudo useradd rosa -m -d /home/rosa
+while IFS= read -r linea; do
+	sudo useradd $linea -m
+	continue
 	sudo passwd rosa << EOF
-	1234Abcd
-	1234Abcd
+	$linea
+	$linea
 	EOF
-#	passwd rosa -e
-#done < "$archivo"
+	continue
+	sudo chmod 722 $linea
+
+#	sudo useradd $linea -m -d /home/$linea
+#	continue
+#	sudo passwd rosa << EOF	<< continue	
+#	$linea
+#	$linea
+#	EOF
+#	continue
+#	sudo chmod 722 $linea
+#	echo $linea
+#	continue
+#	echo $linea
+#	continue
+#	echo $linea
+done < "$archivo"
 
 
