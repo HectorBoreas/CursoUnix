@@ -1,5 +1,4 @@
 #!/bin/bash
-#Comprobación de parametros
 
 # Verificar si se proporciona un archivo como argumento
 if [ $# -ne 1 ]; then
@@ -15,10 +14,7 @@ if [ ! -f "$archivo" ]; then
   exit 1
 fi
 
-# Creación de usuario del archivo línea por línea
-while IFS= read -r name pass perm; do
-	sudo useradd -p $pass -m $name 
-	echo $perm
+# Leer el archivo línea por línea
+while IFS= read -r linea; do
+  echo "Línea leída: $linea"
 done < "$archivo"
-
-
