@@ -1,12 +1,12 @@
 rosa
 1234Abcd
-./
+/
 alberto
 1234Abcd
-./
+/
 lola
 1234Abcd
-./
+/
 pepo
 1234Abcd
-./
+/
