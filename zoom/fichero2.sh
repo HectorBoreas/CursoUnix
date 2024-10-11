@@ -17,22 +17,28 @@ contador=0
 while read -r linea; do	
 	if [ $contador -eq 0 ] || [  ]; then
 		usuario=$linea	
-		echo $usuario
+#		echo $usuario
 	fi
 	if [ $contador -eq 1 ]; then
 		password=$linea	
-#		sudo useradd -m "$usuario" --badname && echo "$usuario:$password" | sudo chpasswd
-		echo $password
+		sudo useradd -m "$usuario" && echo "$usuario:$password" | sudo chpasswd
+#		echo $password
 	fi
 	if [ $contador -eq 2 ]; then
-		permiso=$linea	
-		echo $permiso
-#		sudo chmod
+		ruta=$linea	
+#		echo $permiso
+		sudo cp ./a.txt $ruta$usuario.txt
+		sudo chown $usuario:$usuario $ruta$usuario.txt
+		sudo chmod 722 $ruta$usuario.txt
+	fi
+	if [ $contador -ne 3 ]; then
+		contador=$((contador+1))
+		
 	fi
 	if [ $contador -eq 3 ]; then
-		contador=$((contador-4))
+		contador=$((contador-3))
 	fi
-	contador=$((contador+1))
+	
 	
 done < $1
-#echo $usuario $linea $permiso
+#echo $usuario $password $ruta
