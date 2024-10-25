@@ -31,7 +31,11 @@ USE Ejercicio2
 		id INT AUTO_INCREMENT,
 		código VARCHAR(12) UNIQUE NOT NULL,
 		descripción VARCHAR(100),
+		destinatario VARCHAR(300),
+		dir_destinatario VARCHAR(300),
+		fk_id_provincias INT,
 		PRIMARY KEY(id),
+		FOREIGN KEY(fk_id_provincias) REFERENCES provincias(id),
 	}
 	CREATE TABLE provincias {
 		id INT AUTO_INCREMENT,
@@ -39,13 +43,4 @@ USE Ejercicio2
 		nombre VARCHAR(200),
 		PRIMARY KEY(id),
 	}
-	CREATE TABLE paquetes-provincias {
-		id INT AUTO_INCREMENT,
-		fk_id_paquetes INT,
-		fk_id_provincias INT,
-		destinatario VARCHAR(300),
-		dirección_destinatario VARCHAR(300),
-		PRIMARY KEY(id),
-		FOREIGN KEY(fk_id_paquetes) REFERENCES paquetes(id),
-		FOREIGN KEY(fk_id_provincias) REFERENCES provincias(id),
-	}
+
