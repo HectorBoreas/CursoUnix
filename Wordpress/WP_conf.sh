@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Actualiza el sistema
@@ -24,18 +23,19 @@ sudo chmod -R 755 /var/www/html/wordpress
 
 # Crea la base de datos y usuario en MySQL
 sudo mysql <<MYSQL_SCRIPT
-CREATE DATABASE wordpress_script;
-CREATE USER 'alumno'@'localhost' IDENTIFIED BY 'Admin1234';
-GRANT ALL PRIVILEGES ON wordpress_script.* TO 'alumno'@'localhost';
+CREATE DATABASE examen;
+CREATE USER 'hector'@'localhost' IDENTIFIED BY 'Admin1234';
+GRANT ALL PRIVILEGES ON examen.* TO 'hector'@'localhost';
 FLUSH PRIVILEGES;
-EXIT;
+EXIT
 MYSQL_SCRIPT
 
 # Configura la base de datos en WordPress
 cd /var/www/html/wordpress
-cp wp-config-sample.php wp-config.php
-sed -i "s/database_name_here/wordpress_script/" wp-config.php
-sed -i "s/username_here/alumno/" wp-config.php
-sed -i "s/password_here/Admin1234/" wp-config.php
+sudo cp wp-config-sample.php wp-config.php
+sudo sed -i "s/database_name_here/examen/" wp-config.php
+sudo sed -i "s/username_here/hector/" wp-config.php
+sudo sed -i "s/password_here/Admin1234/" wp-config.php
 
 echo "¡WordPress ha sido instalado y configurado correctamente!"
+
